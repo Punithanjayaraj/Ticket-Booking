@@ -1,0 +1,15 @@
+<div class="admin-container x">
+    <div class="sidebar y">
+      <h2 class="brand-name">Admin Panel</h2>
+      <ul>
+        <li><a routerLink="userdetail" routerLinkActive="active">userdetails</a></li>
+        <li><a routerLink="addmovie" routerLinkActive="active">Add Movie</a></li>
+        <li><a routerLink="addTheater" routerLinkActive="active">Add Theaters </a></li>
+        <!-- <li><a routerLink="show-orders" routerLinkActive="active">Show All Orders</a></li> -->
+        <li><button (click)="logout()" class="logout-button">Logout</button></li>
+      </ul>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet> <!-- Dynamic content based on sidebar navigation -->
+    </div>
+  </div>

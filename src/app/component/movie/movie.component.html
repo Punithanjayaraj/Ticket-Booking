@@ -1,0 +1,109 @@
+<!-- <!-- <div class="col-md-10 offset-md-1 mt-7">
+
+<div class="container" >
+	<div class="movie-card" *ngFor="let movie of MoviesDisplay" >
+    <a [routerLink]="['/movie',movie.movieID]">
+		<div class="movie-header" style="background: url({{movie.imgLink}}); background-size:cover; background-position: center; background-repeat: no-repeat; ">
+		</div><!--movie-header-->
+  <!-- </a>
+		<div class="movie-content">
+			<div class="movie-content-header">
+				<a [routerLink]="['/movie',movie.movieID]">
+					<h3 class="movie-title">{{movie.title}}</h3>
+				</a>
+				<div class="imax-logo"></div>
+			</div>
+			<div class="movie-info">
+				<div class="info-section">
+					<h4>Duration</h4>
+					<!-- <h5>{{convertMinuteToHour(movie.duration)}}</h5> -->
+				<!-- </div><!--date,time-->
+				<!-- <div class="info-section">
+					<h4>Release Date</h4>
+					<h5>{{ movie.releaseDate | date:'yyyy-MM-dd'}} </h5>
+				</div>screen 
+			</div> 
+      <div style="text-align: center; font-size: larger; color: rgb(13, 77, 77);">
+				<a [routerLink]="['/movie',movie.movieID]">	<h3>VIEW SHOW TIME </h3></a>
+      </div>
+		</div>movie-content
+	</div>movie-card
+</div>container
+</div> --> 
+<!-- Carousel -->
+ <br>
+<div id="demo" class="carousel slide " data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1719294100427_u1chennaiandcoimbatoreshowcasebannerswebshowcase1240x300.jpg" alt="Los Angeles" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1717080055549_playcardweb.jpg" alt="Chicago" class="d-block w-100">
+      </div>
+      <div class="carousel-item">
+        <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1720096439676_kungfuflashsaleweb.jpg" alt="New York" class="d-block w-100">
+      </div>
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+<br><br>
+
+
+  <!-- movie list -->
+
+
+
+    <h1>Recommended Movies</h1>
+    
+         <!-- Carousel items -->
+               
+                    <div class="carousel-item active"  >
+                        <div class="row mx-2"  >
+                      <div class="col-md-3 mb-3 rounded" *ngFor="let a of moviecard" >
+                        <div >
+                               
+                             <img [src]="a.imageUrl" alt="Image" style="max-width:100%;  " class="rounded h-25">
+                                
+                                <div class="row">
+                                   <p >Movie:{{a.title}}   Genre:{{a.genre}}  </p> 
+                                    <button class="btn btn-primary w-25" [routerLink]="['theater/'+this.a.id]">book</button>
+                                  </div>
+                                                                 
+                            </div>
+                            </div>
+                        
+                        </div>
+                        </div>
+
+                        <br><br><br>
+                        <app-footer></app-footer>
+                 
+
+
+                    
+                  
+                    
+
+         
+
+    
+
+
+

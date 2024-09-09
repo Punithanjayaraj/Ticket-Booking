@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-success" color-on-scroll="500" >
+  <div class="container">
+      <div class="navbar-translate">
+          <a class="navbar-brand text-white" href="#">Movieza</a>
+          <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse" id="navbarToggler">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item" *ngIf="!isDocumentation()">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                
+                  </a>
+              </li>
+              <li class="nav-item" *ngIf="!isDocumentation()">
+                  <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                  
+                  </a>
+              </li>
+              <li class="nav-item" *ngIf="!isDocumentation()">
+                  <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                  
+                  </a>
+              </li>
+              <li class="nav-item" *ngIf="!isDocumentation()">
+                  <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial/paper-kit-2-angular" target="_blank">              
+                  </a>
+              </li>
+              <!-- <li class="nav-item" *ngIf="!isDocumentation()">
+                  <a href="#" class="nav-link text-white" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Home</a>
+              </li> -->
+           
+             <!--  <li class="nav-item">
+                  <a [routerLink]="['movie']"  class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>Movie</a>
+                
+              </li>
+              <li class="nav-item" >
+                <a [routerLink]="['admin']" class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>admin</a>
+                
+            </li> -->
+       <div style="flex-direction: row-reverse;">
+             <li class="nav-item" >
+                <a [routerLink]="['reg']" class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>Register</a>
+              </li>  
+              <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+              
+       </div>
+             <!-- <li class="nav-item" >
+                <a routerLink="login" class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>login</a>
+              </li>   -->
+            <!--  <li class="nav-item" >
+                <a [routerLink]="['seatbooking']" class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>seatbooking</a>
+              </li>   -->
+<!-- 
+              <li class="nav-item" >
+                <a [routerLink]="['home']" class="nav-link text-white"><i class="nc-icon nc-layout-11 "></i>logout</a>
+              </li>   -->
+              <!-- <li class="nav-item" *ngIf="isLoggedIn()">
+                <a [routerLink]="['myaccount']" class="nav-link text-white"><i class="nc-icon nc-single-02"></i>My Account</a>
+              </li> -->
+              <li *ngIf="isLoggedIn() && getRole() === 'Admin'"><a routerLink="/admin"  class="nav-link text-white">Admin Dashboard</a></li>
+              <li *ngIf="isLoggedIn() "><a routerLink="myaccoun"  class="nav-link text-white" (click)="userdash()">My Account</a></li>
+              
+
+              <li class="nav-item" *ngIf="!isLoggedIn()">
+                <a routerLink="login" class="nav-link text-white"><i class="nc-icon nc-layout-11"></i> login</a>
+              </li>
+              
+              <!-- My Account Link (shown if logged in) -->
+              <!-- <li class="nav-item" *ngIf="isLoggedIn()">
+                <a routerLink="userdash" class="nav-link text-white"><i class="nc-icon nc-single-02"></i> {{placeholder}}</a>
+              </li> -->
+              
+              
+              <!-- Admin Dashboard Link (only shown if logged in as Admin) -->
+              <!-- <li *ngIf="isLoggedIn() && getRole() === 'Admin'" class="nav-item">
+                <a routerLink="/admin" class="nav-link text-white">Admin Dashboard</a>
+              </li>
+              
+              Logout Link (shown if logged in)
+              <li class="nav-item" *ngIf="isLoggedIn()">
+                <a (click)="logout()" class="nav-link text-white"><i class="nc-icon nc-layout-11"></i> MyAccount</a>
+              </li> -->
+           
+              <!-- <li *ngIf="isLoggedIn() && getRole() === 'User'"><a routerLink="/my-account" class="nav-link text-white">My Account</a></li> -->
+              <li *ngIf="isLoggedIn() && getRole() === 'Admin'"><a routerLink="/admin" class="nav-link text-white">Admin </a></li>
+              <!-- <li *ngIf="isLoggedIn" class=" float-end"><a (click)="logout()" class="nav-link text-white">Logout</a></li> -->
+           
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+
+<!-- Modal -->
+

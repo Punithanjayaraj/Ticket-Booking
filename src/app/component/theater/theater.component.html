@@ -1,0 +1,42 @@
+<br><br><br><br>
+
+
+
+  
+<header class="bg-dark text-white text-center py-3">
+  <h1>Welcome to booking the</h1>
+</header>
+
+<!-- Movie Listings Section -->
+<div class="container">                                      
+    <div class="row">
+      <div class="col-4 mb-3 w-5" *ngFor="let x of theatercard">
+        <div class="card">
+          <img
+            [src]="x.imageUrl"
+            class="card-img-top"
+            alt="..."
+            height="178"
+            width="278"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{x.theatreName }}</h5>
+            <p class="card-text">{{ x.location }}</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" [routerLink]="['booking/',this.x.id]">bookTicket</button>      
+          </div>
+        </div>
+      </div>
+    </div>       
+
+<!-- Schedule Section -->
+
+
+<!-- Footer Section -->
+<!-- <footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2024 tAKE mY sHOW. All rights reserved.</p>
+</footer> -->
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

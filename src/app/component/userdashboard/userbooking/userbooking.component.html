@@ -1,0 +1,79 @@
+<br><br><br>
+
+<!-- 
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">User</th>
+        <th scope="col">Movie</th>
+        <th scope="col">Theatre</th>
+        <th scope="col">Showtime</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of apiData">
+        <th scope="row">{{data.userEmail}}</th>
+        <td>{{data.movieTitle}}</td>
+        <td>{{data.theaterName}}</td>
+        <td>{{data.showtime}}</td>
+        <td>{{data.price}}</td>
+      </tr>
+      
+    </tbody> -->
+  <!-- </table> -->
+
+  <div class="d-flex">
+    <div class="admin-container x">
+      <div class="sidebar y">
+        <h2 class="brand-name">Welcome user</h2>
+        <ul>
+          <li><a class="btn text-white hover-0"  routerLink="bookingdetails">Booking Details</a></li>
+          <!-- <li><a routerLink="addmovie" routerLinkActive="active">Add Movie</a></li>
+          <li><a routerLink="addTheater" routerLinkActive="active">Add Theaters </a></li> -->
+          <!-- <li><a routerLink="show-orders" routerLinkActive="active">Show All Orders</a></li> -->
+          <button class="btn text-white hover-success w-100 mt-2 " (click)="logout()">logout</button>
+        </ul>
+      </div>
+      <div class="content">
+        <!-- <router-outlet></router-outlet> Dynamic content based on sidebar navigation -->
+      </div>
+    </div>
+    <div class="mt-1 xx d-flex">
+      <br><br><br>
+      <table class="table  mb-0 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">booking id</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Theatre</th>
+            <th scope="col">Showtime</th>
+            <th scope="col">Price</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of apiData" >
+           
+            <th scope="row">{{data.userEmail}}</th>
+            <td>{{data.bookingId}}</td>
+            <td>{{data.movieTitle}}</td>
+            <td>{{data.theaterName}}</td>
+            <td>{{data.showtime}}</td>
+            <td>{{data.price}}</td>
+            <button class="btn btn-danger" type="button" (click)="ondelete(data)">Cancel</button>
+          </tr>
+          
+        </tbody>
+      </table>
+      <br><br><br><br><br><br><br>  <br><br><br><br><br><br><br>  <br><br><br><br><br><br><br>   <br><br><br><br><br><br><br>
+    
+    
+    
+    </div>
+
+
+  
+
+  

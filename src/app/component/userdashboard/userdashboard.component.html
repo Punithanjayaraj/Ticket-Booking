@@ -1,0 +1,65 @@
+
+<!-- 
+    <tbody class="table-group-divider table-divider-color">
+      <tr *ngFor="let data of apiData">
+        <td>{{data.movieTitle}}</td>
+        <td>{{data.movieTitle}}</td>
+        <td>{{data.theaterName}}</td>
+        <td>{{data.numberOfTickets}}</td>
+        <td>{{data.showtime}}</td>
+        <td>{{data.price}}</td>
+      <td><button class="btn bn-secondary" (click)="generateTicket(data)" data-bs-toggle="modal" data-bs-target="#ticketModal">Generate</button></td> 
+      </tr> -->
+
+      <div class="d-flex">
+        <div class="admin-container x">
+          <div class="sidebar y">
+            <h2 class="brand-name">Welcome user</h2>
+            <ul>
+              <li><a class="btn text-white hover-0"  routerLink="bookingdetails">Booking Details</a></li>
+              <!-- <li><a routerLink="addmovie" routerLinkActive="active">Add Movie</a></li>
+              <li><a routerLink="addTheater" routerLinkActive="active">Add Theaters </a></li> -->
+              <!-- <li><a routerLink="show-orders" routerLinkActive="active">Show All Orders</a></li> -->
+              <button class="btn text-white hover-success w-100 mt-2 " (click)="logout()">logout</button>
+            </ul>
+          </div>
+          <div class="content">
+            <router-outlet></router-outlet> <!-- Dynamic content based on sidebar navigation -->
+          </div>
+        </div>
+        
+
+          <div class="container">
+                  <div class="card" style="border-radius: 15px;">
+                    <div class="card-body text-center">
+                      <div class="mt-3 mb-4">
+                        <img src="https://gifdb.com/images/high/cute-dp-display-profile-picture-wink-54fmnrnudbx9s5e9.gif"
+                          class="rounded-circle img-fluid" style="width: 100px;" />
+                      </div>
+                      <h4 class="mb-2">{{apiData.name}} 😊</h4>
+                      <p class="text-muted mb-4">📩<span class="mx-2">|</span> <a
+                          href="#!">{{apiData.email}}</a></p>
+                      
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-rounded btn-lg">
+                        {{apiData.contact}}
+                      </button>
+                      <br>
+                      <br>
+                      
+                    </div>
+                  </div>
+          </div>
+                </div>
+              
+    
+
+   
+      
+      <router-outlet></router-outlet>
+      
+   
+
+
+
+
+ 

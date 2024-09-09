@@ -1,0 +1,134 @@
+<br><br><br><br><br>
+<div class="container mt-5">
+  <div class="stepper-nav mb-4">
+
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="step-content" [ngClass]="{'active': currentStep === 1}">
+    <h3>Select Show Time</h3>
+
+      <div class="mb-3">
+        <label for="step1Input" class="form-label">showtime</label>
+        <select class="custom-select" id="inputGroupSelect01" class="form-control"  id="step1Input" formControlName="showtime">
+       
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="02:00 PM">02:00 PM</option>
+          <option value="06:00 PM">06:00 PM</option>
+          <option value="06:00 PM">10:00 PM</option>
+
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="nextStep()">Next</button>
+
+  </div>
+
+  <div class="step-content" [ngClass]="{'active': currentStep === 2}">
+    <h3>Enter The Ticket</h3>
+  
+      <div class="mb-3">
+        <label for="step2Input" class="form-label">Total Number of ticket</label>
+        <input type="number" class="custom-select formControl" id="inputGroupSelect01" class="form-control"  id="numberOfTickets"   formControlName="numberOfTickets"
+        id="numberOfTickets">
+        <div *ngIf="form.get('numberOfTickets')?.errors?.['required']">
+      <small class="text-danger">Please enter the number of tickets</small>
+        </div>
+        
+      </div>
+
+      <button type="button" class="btn btn-secondary" (click)="prevStep()">Back</button>
+      <button type="button" class="btn btn-primary"       (click)="nextStep()">Next</button>
+   
+  </div>
+
+  <div class="step-content" [ngClass]="{'active': currentStep === 3}">
+    <h3>Please Select Payment Mode</h3>
+  
+      <div class="mb-3">
+        <label for="step2Input" class="form-label">paymentMode</label>
+        <select class="custom-select" class="form-control"  id="paymentMode"  formControlName="paymentMode">
+          <option selected>Netbanking</option>
+          <option value="Gpay">Gpay</option>
+          <option value="PhonePe">PhonePe</option>
+          <option value="Paytm">PayTm</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-secondary" (click)="prevStep()">Back</button>
+      <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#myModal" (click)="action()">Next</button>
+   
+  </div>
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      
+          
+        </div>
+        <div class="modal-body">
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="ticket">
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                        <div class="ticket-header text-center">
+                            <img src="https://img.freepik.com/free-vector/movie-ticket-concept-illustration_114360-20602.jpg?size=626&ext=jpg&ga=GA1.1.535176046.1718677135&semt=ais_hybrid" alt="Logo" class="ticket-logo">
+                            <h4 class="mt-2">Movieza</h4>
+                        </div>
+                        <div class="ticket-body mt-4">
+                            <h5 class="text-center">{{theaterName}} Cinimas</h5>
+                            <p class="text-center">MovieName: <strong>{{movieName}}</strong></p>
+                            <p class="text-center">Tickets: <strong>{{numberOfTickets}}</strong></p>
+                            <p class="text-center">Date: <strong>{{ currentDate }}</strong></p>
+                            <p class="text-center">Time: <strong>{{showtime}}</strong></p>
+                            <p class="text-center">Seat: <strong>A1{{bookingId}}</strong></p>
+                            <p class="text-center">Price: <strong>{{price}}</strong></p>
+                        </div>
+                        <div class="ticket-footer">
+                            <p>Enjoy the movie!</p>
+                            
+                            <!-- <div type="ticket" class="--flex-column"> 
+                              <div class="top --flex-column">
+                                 <div class="bandname -bold">Ghost Mice</div>
+                                 <div class="tourname">Home Tour</div>
+                                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="" />
+                                 <div class="deetz --flex-row-j!sb">
+                                    <div class="event --flex-column">
+                                       <div class="date">3rd March 2017</div>
+                                       <div class="location -bold">Bloomington, Indiana</div>
+                                    </div>
+                                    <div class="price --flex-column">
+                                       <div class="label">Price</div>
+                                       <div class="cost -bold">$30</div>
+                                    </div> 
+                                 </div> 
+                              </div>
+                              <div class="rip"></div>
+                              <div class="bottom --flex-row-j!sb">
+                                 <div class="barcode"></div>
+                                 <a class="buy" href="#">BUY TICKET</a>
+                              </div>
+                          </div>-->
+                            </div>
+                       </div> 
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" (click)="sendticket()"  data-bs-dismiss="modal">Confirm</button>
+                          <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+             </div>
+            </div>
+        </div>
+    
+        <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+       
+  
+      </div> 
+
+</form>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+<app-footer></app-footer>

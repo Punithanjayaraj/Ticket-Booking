@@ -1,0 +1,154 @@
+<div class="ms-5 c">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col">
+        <!-- MovieName input -->
+        <div data-mdb-input-init class="form-outline">
+          <input
+            type="text"
+            formControlName="theatreName"
+            id="theatreName"
+            class="form-control"
+            placeholder="theatreName"
+          />
+          <label class="form-label" for="form8Example1"></label>
+        </div>
+      </div>
+      <div class="col">
+        <!-- TTicketsAvailability input -->
+        <div data-mdb-input-init class="form-outline">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="location"
+            id="location"
+            placeholder="Theaterlocation"
+          />
+          <label class="form-label" for="form8Example2"></label>
+        </div>
+      </div>
+    </div>
+<br><br>
+    <div class="col">
+      <!-- duration input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imageUrl"
+          id="imageUrl"
+          placeholder="imageUrl"
+        />
+        <label class="form-label" for="form8Example3"></label>
+      </div>
+    </div>
+    <br /><br />
+    <button class="btn btn-primary w-25" type="submit">Submit</button>
+  </form>
+  <br /><br />
+  <hr />
+</div>
+
+
+
+
+
+
+                                          <!-- theater cared -->
+
+                                          <div class="container">                                      
+                                            <div class="row">
+                                              <div class="col-4 mb-3 w-5" *ngFor="let x of theatercard">
+                                                <div class="card">
+                                                  <img
+                                                    [src]="x.imageUrl"
+                                                    class="card-img-top"
+                                                    alt="..."
+                                                    height="178"
+                                                    width="278"
+                                                  />
+                                                  <div class="card-body">
+                                                    <h5 class="card-title">{{x.theatreName }}</h5>
+                                                    <p class="card-text">{{ x.location }}</p>
+                                                    <button class="btn" (click)="deleteItem(x.id)">delete</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>                                        
+
+
+
+         <!--                                         modal                                    -->
+
+         <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title text-centre">Edit Movie Detail</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <form [formGroup]="editform" (ngSubmit)="sub()">
+                  <div class="row">
+                    <div class="col">
+                      <!-- MovieName input -->
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          type="text"
+                          formControlName="theatreName"
+                          id="title"
+                          class="form-control" placeholder="theatreName" [value]="TheatreName"
+                          
+                        />
+                        <label class="form-label" for="form8Example1"></label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <!-- TTicketsAvailability input -->
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="location"
+                          id="location" [value]="Location" placeholder="Theaterlocation"
+                        />
+                        <label class="form-label" for="form8Example2"
+                          ></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                
+                  <hr />
+                
+                  <div class="row">
+                    <div class="col">
+                      <!-- duration input -->
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="imageUrl"
+                          id="imageUrl" [value]="ImageUrl"
+                        />
+                        <label class="form-label" for="form8Example3"></label>
+                      </div>
+                    </div>
+                   
+                   
+                    
+                    <button class="btn btn-primary w-25 mx-auto" type="submit" (click)="submit()" >Submit</button>
+                  </div>
+                </form>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="close()" >Close</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>

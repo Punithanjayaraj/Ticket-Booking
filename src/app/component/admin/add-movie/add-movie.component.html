@@ -1,0 +1,273 @@
+<div class="ms-5 c">
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="row">
+    <div class="col">
+      <!-- MovieName input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          formControlName="title"
+          id="title"
+          class="form-control"
+        />
+        <label class="form-label" for="form8Example1">MovieName</label>
+      </div>
+    </div>
+    <div class="col">
+      <!-- TTicketsAvailability input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="totalticketsavailable"
+          id="totalticketsavailable"
+        />
+        <label class="form-label" for="form8Example2"
+          >TicketsAvailability</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <!-- duration input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="duration"
+          id="duration"
+        />
+        <label class="form-label" for="form8Example3">IMDB</label>
+      </div>
+    </div>
+    <div class="col">
+      <!-- genre input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          class="form-control border-brimary"
+          formControlName="genre"
+          id="genre"
+        />
+        <label class="form-label" for="form8Example4">Genre</label>
+      </div>
+    </div>
+    <div class="col">
+      <!-- imgurl input -->
+      <div data-mdb-input-init class="form-outline">
+        <input
+          type="text"
+          formControlName="imageUrl"
+          id="imageUrl"
+          class="form-control"
+        />
+        <label class="form-label" for="form8Example1">ImgUrl</label>
+      </div>
+    </div>
+    <div data-mdb-input-init class="form-outline mt-4">
+      <textarea
+        class="form-control"
+        rows="4"
+        formControlName="description"
+        id="description"
+      ></textarea>
+      <label class="form-label" for="form6Example7">Description</label>
+    </div>
+
+    <button class="btn btn-primary w-25" type="submit">Submit</button>
+  </div>
+</form>
+<br /><br />
+<hr />
+
+<!-- <div class="container">
+
+ 
+  <div class="row blog">
+      <div class="col-md-12">
+          <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+           
+
+             Carousel items 
+              <div class="carousel-inner">
+
+                  <div class="carousel-item active">
+                      <div class="row rounded" *ngFor="let x of moviecard">
+                          <div class="col-md-3 rounded">
+                              <a href="#">
+                                  <img [src]="x.imageUrl">
+                              </a>
+                          </div>
+                          
+                     .row
+
+                      <div class="row">
+                         
+                      </div>
+                  </div>
+               .item
+
+              </div>
+           .carousel-inner
+          </div>
+         .Carousel--
+
+      </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <!-- <div class="carousel-inner" >
+    <div class="carousel-item active"> -->
+
+  <div class="row">
+    <div class="col-4 mb-3 w-5" *ngFor="let x of moviecard">
+      <div class="card">
+        <img
+          [src]="x.imageUrl"
+          class="card-img-top"
+          alt="..."
+          
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ x.title }}</h5>
+          <p class="card-text">{{ x.genre }}</p>
+          <p class="card-text">{{ x.description }}</p>
+          <button class="btn" data-bs-toggle="modal" data-bs-target="#myModal" (click)="update(x.id)">edit</button>
+          <button class="btn" (click)="deleteItem(x.id)">delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title text-centre">Edit Movie Detail</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <form [formGroup]="editform" (ngSubmit)="sub()">
+        <div class="row">
+          <div class="col">
+            <!-- MovieName input -->
+            <div data-mdb-input-init class="form-outline">
+              <input
+                type="text"
+                formControlName="title"
+                id="title"
+                class="form-control" placeholder="MovieName" [value]="title"
+                
+              />
+              <label class="form-label" for="form8Example1"></label>
+            </div>
+          </div>
+          <div class="col">
+            <!-- TTicketsAvailability input -->
+            <div data-mdb-input-init class="form-outline">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="totalticketsavailable"
+                id="totalticketsavailable" [value]="ticketsAvailable" placeholder="ticketsAvailable"
+              />
+              <label class="form-label" for="form8Example2"
+                ></label
+              >
+            </div>
+          </div>
+        </div>
+      
+        <hr />
+      
+        <div class="row">
+          <div class="col">
+            <!-- duration input -->
+            <div data-mdb-input-init class="form-outline">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="duration"
+                id="duration" [value]="duration"
+              />
+              <label class="form-label" for="form8Example3"></label>
+            </div>
+          </div>
+          <div class="col">
+            <!-- genre input -->
+            <div data-mdb-input-init class="form-outline">
+              <input
+                type="text"
+                class="form-control border-brimary"
+                formControlName="genre"
+                id="genre" [value]="genre"
+              />
+              <label class="form-label" for="form8Example4"></label>
+            </div>
+          </div>
+          <div class="col">
+            <!-- imgurl input -->
+            <div data-mdb-input-init class="form-outline">
+              <input
+                type="text"
+                formControlName="imageUrl"
+                id="imageUrl"
+                class="form-control" [value]="imageUrl"
+              />
+              <label class="form-label" for="form8Example1"></label>
+            </div>
+          </div>
+          <div data-mdb-input-init class="form-outline mt-4">
+            <textarea
+              class="form-control"
+              rows="4"
+              formControlName="description"
+              id="description" [value]="Description"
+            ></textarea>
+            <label class="form-label" for="form6Example7"></label>
+          </div>
+      
+          <button class="btn btn-primary w-25 mx-auto" type="submit"  (click)="submit()" data-bs-dismiss="modal">Submit</button>
+        </div>
+      </form>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="close()" >Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- </div></div> -->
+  <!-- <a
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a> -->
+</div>
+</div>

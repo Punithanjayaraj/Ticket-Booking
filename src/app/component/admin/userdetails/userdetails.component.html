@@ -1,0 +1,46 @@
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>booking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of userdinfo" >
+        <td>
+          <div class="d-flex align-items-center">
+            <img
+                [src]="img"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">{{x.name}}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">{{x.email}}</p>
+       
+        </td>
+        <td>
+          <span class="fw-normal mb-1">{{x.contact}}</span>
+        </td>
+        <td>
+            <span class="badge badge-success rounded-pill d-inline">booked</span>
+        </td>
+        <td>
+          <button type="button" class="btn btn-link btn-sm btn-rounded">
+           
+          </button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <br><br><br><br><br><br><br>
+
+
