@@ -26,6 +26,7 @@ export class BookService {
     
     return this.http.post('http://localhost:5271/api/Booking/PostBooking/'+uid+'/'+mid+'/'+tid, JSON.stringify(booking), this.httpOptions)
 
+
   }
 
 
